@@ -1,0 +1,9 @@
+- hosts: all
+  tasks:
+    - name: Backup Drupal
+      drupal_backup:
+        state: present
+        drupal_path: /var/www/html
+        backup_path: /backups
+      register: result
+    - debug: var=result
